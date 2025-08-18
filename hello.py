@@ -7,7 +7,7 @@ padrao chamado OS.
 
 explicando como fiz isso:
     criei uma variavel current_lenguage, importei um modulo padrao OS
-    utilizei uma funcao do mudolo os.getenv("LANG"), com essa funçao
+    utilizei uma funcao do modulo os.getenv("LANG"), com essa funçao
     ele me retorna a lingua configurada no ENV.
 
     depois criei uma codiçao para colocar as linguas e a mensagem.
