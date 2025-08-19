@@ -11,6 +11,11 @@ explicando como fiz isso:
     ele me retorna a lingua configurada no ENV.
 
     depois criei uma codiçao para colocar as linguas e a mensagem.
+
+execuçao:
+    python3 hello.py
+    ou
+    ./hello.py
 """
 __version__= "0.1.0"
 __author__= "Pedro Henrique"
