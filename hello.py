@@ -23,17 +23,15 @@ __license__= "unlicense"
 
 import os
 
-current_lenguage = os.getenv("LANG")[:5]
+current_lenguage = os.getenv("LANG", "en_US")[:5]
 
-if current_lenguage == "pt_BR":
-    msg = "Ola mundo!"
-elif current_lenguage == "en_US":
-    msg = "Hello world!"
-elif current_lenguage == "es_ES":
-    msg = "¡Hola, mundo!"
-elif current_lenguage == "zh_CN":
-    msg = "你好，世界"
-elif current_lenguage == "ar_SA":
-    msg = "مرحبا بالعالم"
+msg = {
+    "pt_BR": "Ola, mundo!",
+    "en_US": "Hello world!",
+    "es_ES": "¡Hola, mundo!",
+    "zh_CN": "你好，世界",
+    "ar_SA": "مرحبا بالعالم",
+}
 
-print(msg)
+
+print(msg[current_lenguage])
