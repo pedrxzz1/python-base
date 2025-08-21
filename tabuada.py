@@ -4,7 +4,7 @@ Primeira versao simples
 
 Proximo passo: 
     adicionarei o .format para centralizar os numeros e deixar
-o programa agradavel visualmente.
+    o programa agradavel visualmente.
 
 """
 __version__ = "0.0.1"
