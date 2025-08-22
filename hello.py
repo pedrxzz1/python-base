@@ -33,5 +33,4 @@ msg = {
     "ar_SA": "مرحبا بالعالم",
 }
 
-
 print(msg[current_lenguage])
