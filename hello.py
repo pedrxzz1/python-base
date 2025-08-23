@@ -28,8 +28,17 @@ import sys
 arguments = {"lang": None, "count": 1}
 
 for arg in sys.argv[1:]:
-    key, value = arg.split("=")
-    key = key.lstrip("-").strip()
+    # TODO: Tratar ValueError
+    try:
+        key, value = arg.split("=")
+    except ValueError as e:
+        print(f"[ERROR] {str(e)}")
+        print("You need to use `=`")
+        print(f"you passed {arg}")
+        print("Try with --key=value")
+        sys.exit(1)
+
+    key = key.lstrip("-").strip()    
     value = value.strip()
     if key not in arguments:
         print(f"Invalid Option `{key}`")
