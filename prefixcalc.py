@@ -24,6 +24,9 @@ __author__ = "Pedro Henrique"
 __license__ = "unlicense"
 
 import sys
+import os
+
+from datetime import datetime
 
 arguments = sys.argv[1:]
 
@@ -32,7 +35,7 @@ if not arguments:
     n1 = input("n1:")
     n2 = input("n2:")
     arguments = [operation, n1, n2]
-elif arguments !=3:
+elif len(arguments) != 3:
     print("Invalid Operation")
     print("Ex: `sum 5 5`")
     sys.exit(1)
@@ -64,5 +67,15 @@ elif operation == "mul":
     result = n1 * n2
 elif operation == "div":
     result = n1 / n2
+
+path = os.curdir
+filepath = os.path.join(path, "prefixcalc.log")
+timestamp = datetime.now().isoformat()
+user = os.getenv("USER", "anonymous")
+
+with open(filepath, "a") as file_:
+    file_.write(
+    f"{timestamp} - {user} - {operation}, {n1}, {n2} = {result}\n"
+    )
 
 print(f"Your result is: {result} \N{party popper}\N{party popper}!")
