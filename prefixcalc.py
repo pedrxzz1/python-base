@@ -27,12 +27,32 @@ import sys
 
 arguments = sys.argv[1:]
 
+if not arguments:
+    operation = input("Operation:")
+    n1 = input("n1:")
+    n2 = input("n2:")
+    arguments = [operation, n1, n2]
+elif arguments !=3:
+    print("Invalid Operation")
+    print("Ex: `sum 5 5`")
+    sys.exit(1)
+    
 operation, *nums = arguments
 
-validated_nums = []
+validated_operation = ("sum", "sub", "mul", "div")
+if operation not in validated_operation:
+    print("Invalid Operation!")
+    print(validated_operation)
+    sys.exit(1)
 
+    
+validated_nums = []
 for num in nums:
-    validated_nums.append(int(num))
+    if (".") in num:
+        num = float(num)
+    else:
+        num = int(num)
+    validated_nums.append(num)
 
 n1, n2 = validated_nums
 
@@ -45,4 +65,4 @@ elif operation == "mul":
 elif operation == "div":
     result = n1 / n2
 
-print(f"You result is {result}! \N{party popper}")
+print(f"Your result is: {result} \N{party popper}\N{party popper}!")
